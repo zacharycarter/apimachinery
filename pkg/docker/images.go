@@ -11,6 +11,8 @@ const (
 	ImageElasticdump      = "kubedb/elasticdump"
 	ImageMongoDBOperator  = "kubedb/mongodb-operator"
 	ImageMongoDB          = "library/mongo"
+	ImageXdbOperator      = "kubedb/xdb-operator"
+	ImageXdb              = "kubedb/xdb"
 )
 
 const (

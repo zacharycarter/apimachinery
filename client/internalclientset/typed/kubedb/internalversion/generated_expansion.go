@@ -27,3 +27,5 @@ type MySQLExpansion interface{}
 type PostgresExpansion interface{}
 
 type SnapshotExpansion interface{}
+
+type XdbExpansion interface{}

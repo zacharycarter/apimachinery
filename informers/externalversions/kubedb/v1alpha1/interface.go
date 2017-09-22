@@ -36,6 +36,8 @@ type Interface interface {
 	Postgreses() PostgresInformer
 	// Snapshots returns a SnapshotInformer.
 	Snapshots() SnapshotInformer
+	// Xdbs returns a XdbInformer.
+	Xdbs() XdbInformer
 }
 
 type version struct {
@@ -75,4 +77,9 @@ func (v *version) Postgreses() PostgresInformer {
 // Snapshots returns a SnapshotInformer.
 func (v *version) Snapshots() SnapshotInformer {
 	return &snapshotInformer{factory: v.SharedInformerFactory}
+}
+
+// Xdbs returns a XdbInformer.
+func (v *version) Xdbs() XdbInformer {
+	return &xdbInformer{factory: v.SharedInformerFactory}
 }

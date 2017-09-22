@@ -29,6 +29,7 @@ type KubedbInterface interface {
 	MySQLsGetter
 	PostgresesGetter
 	SnapshotsGetter
+	XdbsGetter
 }
 
 // KubedbClient is used to interact with features provided by the kubedb.com group.
@@ -58,6 +59,10 @@ func (c *KubedbClient) Postgreses(namespace string) PostgresInterface {
 
 func (c *KubedbClient) Snapshots(namespace string) SnapshotInterface {
 	return newSnapshots(c, namespace)
+}
+
+func (c *KubedbClient) Xdbs(namespace string) XdbInterface {
+	return newXdbs(c, namespace)
 }
 
 // NewForConfig creates a new KubedbClient for the given config.

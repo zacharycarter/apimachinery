@@ -52,6 +52,9 @@ type OriginSpec struct {
 	// MongoDB Spec
 	// +optional
 	MongoDB *MongoDBSpec `json:"mongodb,omitempty"`
+	// Xdb Spec
+	// +optional
+	Xdb *XdbSpec `json:"xdb,omitempty"`
 }
 
 type DormantDatabasePhase string

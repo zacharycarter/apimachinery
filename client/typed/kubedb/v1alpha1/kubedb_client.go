@@ -31,6 +31,7 @@ type KubedbV1alpha1Interface interface {
 	MySQLsGetter
 	PostgresesGetter
 	SnapshotsGetter
+	XdbsGetter
 }
 
 // KubedbV1alpha1Client is used to interact with features provided by the kubedb.com group.
@@ -60,6 +61,10 @@ func (c *KubedbV1alpha1Client) Postgreses(namespace string) PostgresInterface {
 
 func (c *KubedbV1alpha1Client) Snapshots(namespace string) SnapshotInterface {
 	return newSnapshots(c, namespace)
+}
+
+func (c *KubedbV1alpha1Client) Xdbs(namespace string) XdbInterface {
+	return newXdbs(c, namespace)
 }
 
 // NewForConfig creates a new KubedbV1alpha1Client for the given config.

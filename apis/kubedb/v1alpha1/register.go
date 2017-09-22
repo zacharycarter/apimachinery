@@ -44,6 +44,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&MySQLList{},
 		&MongoDB{},
 		&MongoDBList{},
+		&Xdb{},
+		&XdbList{},
 	)
 
 	scheme.AddKnownTypes(SchemeGroupVersion,
