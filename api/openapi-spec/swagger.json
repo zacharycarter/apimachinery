@@ -8062,6 +8062,9 @@
         "name"
       ],
       "properties": {
+        "keyFileSecret": {
+          "$ref": "#/definitions/io.k8s.api.core.v1.SecretVolumeSource"
+        },
         "name": {
           "type": "string"
         }
