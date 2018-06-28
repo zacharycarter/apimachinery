@@ -16155,6 +16155,16 @@ spec:
                       type: string
                     prefix:
                       type: string
+            clusterMode:
+              properties:
+                replicaSet:
+                  properties:
+                    name:
+                      type: string
+                  required:
+                  - name
+              required:
+              - replicaSet
             databaseSecret:
               description: |-
                 Adapts a Secret into a volume.
