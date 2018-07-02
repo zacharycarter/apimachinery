@@ -8088,6 +8088,10 @@
           "description": "Mode of clustering for mongodb",
           "$ref": "#/definitions/com.github.kubedb.apimachinery.apis.kubedb.v1alpha1.MongoDBClusterMode"
         },
+        "configFile": {
+          "description": "ConfigFile (i.e. mongod.conf) for mongodb",
+          "$ref": "#/definitions/io.k8s.api.core.v1.ConfigMapVolumeSource"
+        },
         "databaseSecret": {
           "description": "Database authentication secret",
           "$ref": "#/definitions/io.k8s.api.core.v1.SecretVolumeSource"
