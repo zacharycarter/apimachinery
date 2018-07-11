@@ -8109,8 +8109,8 @@
           "description": "Mode of clustering for mongodb",
           "$ref": "#/definitions/com.github.kubedb.apimachinery.apis.kubedb.v1alpha1.MongoDBClusterMode"
         },
-        "configFile": {
-          "description": "ConfigFile (i.e. mongod.conf) for mongodb",
+        "configSource": {
+          "description": "ConfigSource is an optional field to provide custom configuration file for database (i.e mongod.cnf). If specified, this file will be used as configuration file otherwise default configuration file will be used.",
           "$ref": "#/definitions/io.k8s.api.core.v1.VolumeSource"
         },
         "databaseSecret": {

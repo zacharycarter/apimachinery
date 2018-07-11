@@ -18528,7 +18528,7 @@ spec:
                   - name
               required:
               - replicaSet
-            configFile:
+            configSource:
               description: Represents the source of a volume to mount. Only one of
                 its members may be specified.
               properties:
