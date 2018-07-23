@@ -7656,6 +7656,10 @@
         "version"
       ],
       "properties": {
+        "TLS": {
+          "description": "etcd cluster TLS configuration",
+          "$ref": "#/definitions/com.github.kubedb.apimachinery.apis.kubedb.v1alpha1.TLSPolicy"
+        },
         "affinity": {
           "description": "If specified, the pod's scheduling constraints",
           "$ref": "#/definitions/io.k8s.api.core.v1.Affinity"
@@ -7872,6 +7876,18 @@
         "vsphereVolume": {
           "description": "VsphereVolume represents a vSphere volume attached and mounted on kubelets host machine",
           "$ref": "#/definitions/io.k8s.api.core.v1.VsphereVirtualDiskVolumeSource"
+        }
+      }
+    },
+    "com.github.kubedb.apimachinery.apis.kubedb.v1alpha1.MemberSecret": {
+      "properties": {
+        "peerSecret": {
+          "description": "PeerSecret is the secret containing TLS certs used by each etcd member pod for the communication between etcd peers.",
+          "type": "string"
+        },
+        "serverSecret": {
+          "description": "ServerSecret is the secret containing TLS certs used by each etcd member pod for the communication between etcd server and its clients.",
+          "type": "string"
         }
       }
     },
@@ -8978,6 +8994,16 @@
           "type": "string"
         },
         "prefix": {
+          "type": "string"
+        }
+      }
+    },
+    "com.github.kubedb.apimachinery.apis.kubedb.v1alpha1.TLSPolicy": {
+      "properties": {
+        "member": {
+          "$ref": "#/definitions/com.github.kubedb.apimachinery.apis.kubedb.v1alpha1.MemberSecret"
+        },
+        "operatorSecret": {
           "type": "string"
         }
       }

@@ -71,6 +71,23 @@ type EtcdSpec struct {
 	// Cannot be updated.
 	// +optional
 	Env []core.EnvVar `json:"env,omitempty" protobuf:"bytes,7,rep,name=env"`
+
+	// etcd cluster TLS configuration
+	TLS *TLSPolicy `json:"TLS,omitempty"`
+}
+
+type TLSPolicy struct {
+	Member *MemberSecret `json:"member,omitempty"`
+	OperatorSecret string `json:"operatorSecret,omitempty"`
+}
+
+type MemberSecret struct {
+	// PeerSecret is the secret containing TLS certs used by each etcd member pod
+	// for the communication between etcd peers.
+	PeerSecret string `json:"peerSecret,omitempty"`
+	// ServerSecret is the secret containing TLS certs used by each etcd member pod
+	// for the communication between etcd server and its clients.
+	ServerSecret string `json:"serverSecret,omitempty"`
 }
 
 type EtcdStatus struct {
